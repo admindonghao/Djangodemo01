@@ -16,6 +16,7 @@ class Protagonist(models.Model):
     name = models.CharField(max_length=10)
     gender = models.CharField(max_length=10)
     undergo = models.CharField(max_length=200)
+    game = models.ForeignKey('Games', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
