@@ -16,7 +16,6 @@ class HeroInfo(models.Model):
     hbook = models.ForeignKey('BookInfo', on_delete=models.CASCADE)
 
 
-
 """
 
 ORM 对象中 O
