@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # 在booktest中创建一个urls文件，把所需路由写入其中，减少模块间的关联
+    url(r'booktest/', include('booktest.urls')),
 ]
