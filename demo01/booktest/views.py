@@ -16,7 +16,7 @@ def list(request):
 
 def detail(request,id):
     try:
-        book = BookInfo.objects.get(pk=int(id))
+        book = BookInfo.objects.all()[int(id)].btitle
         return HttpResponse(book)
     except:
         return HttpResponse('没有此书')
