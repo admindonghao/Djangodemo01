@@ -4,7 +4,7 @@
 """
 from django.shortcuts import render
 from django.http import HttpResponse
-
+from .models import BookInfo
 # Create your views here.
 
 
@@ -13,3 +13,10 @@ def index(request):
 
 def list(request):
     return HttpResponse('列表页')
+
+def detail(request,id):
+    try:
+        book = BookInfo.objects.get(pk=int(id))
+        return HttpResponse(book)
+    except:
+        return HttpResponse('没有此书')
