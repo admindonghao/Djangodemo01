@@ -20,5 +20,5 @@ from django.conf.urls import url, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     # 在booktest中创建一个urls文件，把所需路由写入其中，减少模块间的关联
-    url(r'booktest/', include('booktest.urls')),
+    url(r'booktest/', include('booktest.urls',namespace='booktest')),
 ]
