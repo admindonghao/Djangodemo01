@@ -10,6 +10,10 @@ class BookInfo(models.Model):
     def __str__(self):
         return self.btitle
 
+    def bookname(self):
+        return self.btitle
+    bookname.short_description = '书名'
+
 
 class HeroInfo(models.Model):
     hname = models.CharField(max_length=10)
@@ -20,6 +24,18 @@ class HeroInfo(models.Model):
 
     def __str__(self):
         return self.hname
+
+    def name(self):
+        return self.hname
+    name.short_description = '主角'
+
+    def gender(self):
+        return self.hgender
+    gender.short_description = '性别'
+
+    def wu(self):
+        return self.hconent
+    wu.short_description = '武功、经历'
 
 
 """
